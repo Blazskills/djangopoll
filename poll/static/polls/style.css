@@ -1,0 +1,12 @@
+li a {
+    color: green;
+}
+
+body{
+    background-color: rgb(0, 32, 22);
+    color: white;
+}
+
+.img{
+    background: url("images/Passport.JPG")
+}
