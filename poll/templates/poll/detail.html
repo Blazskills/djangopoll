@@ -10,7 +10,7 @@
 
     <ul>
         {% for choice in question.choice_set.all %}
-            <li>{{ choice.choice_text }} {{choice.votes}} Postiion {{choice.question}} when {{choice.question.pub_date}}</li>
+            <li>{{ choice.choice_text }} {{choice.votes}} when {{choice.question.pub_date|timesince}} ago</li>
         {% endfor %}
         </ul>
     

@@ -1,18 +1,68 @@
 
   {% extends 'poll/main.html' %}
-  
-  {% block content %}
-  <h1>POLL APP</h1>
-  <div class="img">
 
-  </div>
-    {% if latest_question_list %}
-    <ul>
-    {% for question in latest_question_list %}
-        <li><a href="{% url 'polls:detail' question.id %}">{{ question.question_text }}</a></li>
-    {% endfor %}
-    </ul>
-{% else %}
-    <p>No polls are available.</p>
-{% endif %}
+  {% block content %}
+  <style>
+
+    .poll-container{
+        display: grid;
+        grid-template-columns: 2fr 2fr;
+        text-align: center;
+        text-decoration: none;
+    }
+</style>
+<div class="poll-container">
+    <div>
+      
+        <h1>VALID POLL APP</h1>
+        <div class="img">
+      
+        </div>
+          {% if latest_question_list %}
+          <ul>
+          {% for question in latest_question_list %}
+          
+          {% if question.choice_set.count > 1 %}
+          <li><a href="{% url 'polls:detail' question.id %}">{{ question.question_text }}</a></li>
+      
+          {% endif %}
+              
+          {% endfor %}
+          </ul>
+      {% else %}
+          <p>No polls are available.</p>
+      {% endif %}
+      
+      </div>
+      
+    
+    
+    <div>
+        <h2>POLL WITHOUT CHOICE</h2>
+        {% if latest_question_list %}
+            <ul>
+            {% for question in latest_question_list %}
+            
+            {% if question.choice_set.count <= 0 %}
+            <li><a href="#" id="novote{{question.id}}">{{ question.question_text }}</a></li>
+                
+            {% endif %}
+                
+            {% endfor %}
+            </ul>
+        {% else %}
+            <p>No polls are available.</p>
+        {% endif %}
+        
+    </div>
+</div>
+
+
+<script>
+    function test() {
+        alert('break time!');
+    }
+    document.getElementById('novote{{question.id}}').onclick = test;
+    
+</script>
 {% endblock content %}
