@@ -1,0 +1,7 @@
+[2021-11-16 09:11:55 +0100] [18523] [INFO] Starting gunicorn 20.1.0
+[2021-11-16 09:11:55 +0100] [18523] [INFO] Listening at: http://0.0.0.0:5000 (18523)
+[2021-11-16 09:11:55 +0100] [18523] [INFO] Using worker: sync
+[2021-11-16 09:11:55 +0100] [18525] [INFO] Booting worker with pid: 18525
+[2021-11-16 09:13:22 +0100] [18523] [INFO] Handling signal: int
+[2021-11-16 09:13:22 +0100] [18525] [INFO] Worker exiting (pid: 18525)
+[2021-11-16 09:13:22 +0100] [18523] [INFO] Shutting down: Master
