@@ -43,6 +43,8 @@ INSTALLED_APPS = [
     'poll.apps.PollConfig'
 ]
 
+
+
 MIDDLEWARE = [
     'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.middleware.security.SecurityMiddleware',
